@@ -10,7 +10,9 @@ const rootDir = path.resolve(__dirname, '..');
 // アップロード対象ファイル設定
 const UPLOAD_FILES = [
   { localPath: 'dist/resume.pdf', driveFileName: '職務経歴書.pdf' },
-  { localPath: 'dist/cv.pdf', driveFileName: '履歴書.pdf' }
+  { localPath: 'dist/resume-public.pdf', driveFileName: '職務経歴書_公開版.pdf' },
+  { localPath: 'dist/cv.pdf', driveFileName: '履歴書.pdf' },
+  { localPath: 'dist/cv-public.pdf', driveFileName: '履歴書_公開版.pdf' }
 ];
 
 async function getGoogleDriveClient() {
