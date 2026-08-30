@@ -51,6 +51,9 @@ Markdown（`docs/resume.md` や `docs/cv.md`）内に以下の HTML タグを記
 | `<span class="secret-address">...</span>` | 都道府県のみ（例: 東京都） | `SECRET_ADDRESS`（番地・建物名を含む現住所） |
 | `<span class="secret-email">...</span>` | 公開用メールアドレス | `SECRET_EMAIL`（提出用メールアドレス） |
 | `<span class="secret-phone">...</span>` | 非公開 | `SECRET_PHONE`（電話番号） |
+| `<span class="secret-highschool">...</span>` | 某商業高校 情報処理科 | `SECRET_HIGHSCHOOL`（出身高校・学科） |
+| `<span class="secret-university">...</span>` | 某公立情報系大学 | `SECRET_UNIVERSITY`（出身大学・学部学科） |
+| `<span class="secret-company">...</span>` | 某不動産ポータルサイト運営会社 | `SECRET_COMPANY`（所属会社名） |
 
 ※ 環境変数が設定されていない場合（ローカルプレビュー時など）は、タグ内に記述されたデフォルト値がそのまま使用されます。
 
@@ -108,5 +111,8 @@ GitHub リポジトリの **Settings** > **Secrets and variables** > **Actions**
 - `SECRET_ADDRESS`: 正式な住所（例: `東京都千代田区〇〇 1-2-3 マンション名101`）
 - `SECRET_EMAIL`: 提出用連絡先メールアドレス
 - `SECRET_PHONE`: 提出用電話番号（例: `090-1234-5678`）
+- `SECRET_HIGHSCHOOL`: 高校名・学科（例: `〇〇県立△△高等学校 情報処理科`）
+- `SECRET_UNIVERSITY`: 大学名・学部学科（例: `〇〇大学 △△学部 □□学科`）
+- `SECRET_COMPANY`: 会社名（例: `株式会社〇〇`）
 
 ---

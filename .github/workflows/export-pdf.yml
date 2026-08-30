@@ -39,6 +39,9 @@ jobs:
           SECRET_ADDRESS: ${{ secrets.SECRET_ADDRESS }}
           SECRET_EMAIL: ${{ secrets.SECRET_EMAIL }}
           SECRET_PHONE: ${{ secrets.SECRET_PHONE }}
+          SECRET_HIGHSCHOOL: ${{ secrets.SECRET_HIGHSCHOOL }}
+          SECRET_UNIVERSITY: ${{ secrets.SECRET_UNIVERSITY }}
+          SECRET_COMPANY: ${{ secrets.SECRET_COMPANY }}
         run: npm run pdf
 
       - name: Upload to Google Drive (In-place update)

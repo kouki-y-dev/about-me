@@ -24,6 +24,9 @@ function replaceSecrets(markdownContent) {
     'secret-address': process.env.SECRET_ADDRESS,
     'secret-email': process.env.SECRET_EMAIL,
     'secret-phone': process.env.SECRET_PHONE,
+    'secret-highschool': process.env.SECRET_HIGHSCHOOL,
+    'secret-university': process.env.SECRET_UNIVERSITY,
+    'secret-company': process.env.SECRET_COMPANY,
   };
 
   // 環境変数 SECRET_* から動的に追加マッピング
