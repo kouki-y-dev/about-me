@@ -1,7 +1,7 @@
 # Portfolio & About Me
 
-こんにちは！ご覧いただきありがとうございます。  
-このリポジトリは、私（エンジニア）の職務経歴、プロフィール、スキルセット、価値観などをまとめた公開ドキュメントです。
+ご覧いただきありがとうございます。  
+このリポジトリは、kouki_yの職務経歴、プロフィール、スキルセット、価値観などをまとめた公開ドキュメントです。
 
 ---
 
@@ -17,23 +17,24 @@
 ## 👤 私について (About Me)
 
 ### 自己紹介
-Webアプリケーション開発を中心に、バックエンド・フロントエンド・インフラ構築（クラウド/CI/CD）まで幅広く取り組んでいます。  
-課題の本質を見極め、技術を通じてユーザーやチームの生産性を向上させることに情熱を持っています。
+
+札幌でデータエンジニア兼バックエンドエンジニアをしています。データ基盤構築の保守・管理やそこからのデータ分析、API開発等を担当していました。主にPythonとAWSを使用しています。
 
 ### 大切にしていること・仕事のスタンス
-1. **課題解決ファースト**: 技術の導入自体を目的にせず、ビジネス課題や運用負荷の軽減に最も効果的なアプローチを選択します。
-2. **自動化・仕組み化の推進**: 手動の繰り返し作業やミスが起きやすい運用をCI/CDやスクリプトで自動化し、本質的な開発に集中できる環境を作ります。
-3. **オープンで心理的安全性の高いコミュニケーション**: チーム内での情報共有やコードレビューを通じて、互いに学び合い成長できる文化を大切にします。
+
+1. **課題解決ファースト**: 技術の導入自体を目的にせず、ビジネス課題や運用負荷を考慮して最も効果的なアプローチを選択します。
+2. **AIファースト**: 設計・開発問わず常にAIを使う事を念頭に置いています。ただAIの答えを鵜呑みにするのではなく、自分自身の頭で考えて検証し、最終的に利用するかどうかを判断します。
+3. **最小手順での開発**: 開発をする際、頭の中に明確な正解が見えるまで手を動かさないように心がけています。最初にできる限り正解を考えてから作り始める事で、手戻りを最小限にするようにしています。
 
 ---
 
 ## 🛠 スキルセット概要
 
-- **Languages**: TypeScript, JavaScript, Python, Go, HTML/CSS
-- **Frameworks & Libraries**: Node.js, Express, React, Next.js, Vue.js
-- **Cloud & Infrastructure**: AWS (ECS, Lambda, S3, RDS), Docker, Terraform
+- **Languages**: Python , SQL
+- **Frameworks & Libraries**: FastAPI, Pydantic
+- **Cloud & Infrastructure**: AWS, Docker, Terraform, CloudFormation
 - **CI/CD & Tools**: GitHub Actions, Git, Linux
-
+- **AWS Services**: CloudWatch, IAM, Step Functions, SNS, SQS, SES, Lambda, DynamoDB, Glue, Athena, QuickSuite(旧QuickSight), OpenSearch, Bedrock Agentcore, API Gateway, S3, Secrets Manager, EventBridge, ECR, Route53
 ---
 
 ## 📮 連絡先 & リンク
