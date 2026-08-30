@@ -1,6 +1,36 @@
 # 📄 About Me (Portfolio, Resume & CV)
 
-転職活動を見据えた **自己紹介・職務経歴書・履歴書の一元管理リポジトリ** です。
+<div align="center">
+
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white)](https://kouki-y-dev.github.io/about-me/)
+[![CI/CD](https://img.shields.io/badge/GitHub%20Actions-Automated%20Workflow-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/kouki-y-dev/about-me/actions)
+
+<br />
+
+[![Node.js](https://img.shields.io/badge/Node.js-22.x-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+[![Puppeteer](https://img.shields.io/badge/Puppeteer-v24-00D8A2?style=flat-square&logo=puppeteer&logoColor=white)](https://pptr.dev/)
+[![Google Drive API](https://img.shields.io/badge/Google%20Drive-API%20v3-4285F4?style=flat-square&logo=googledrive&logoColor=white)](https://developers.google.com/drive)
+[![Markdown](https://img.shields.io/badge/Markdown-Single%20Source-000000?style=flat-square&logo=markdown&logoColor=white)](https://www.markdownguide.org/)
+[![Author](https://img.shields.io/badge/Author-kouki--y--dev-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/kouki-y-dev)
+
+</div>
+
+転職活動を見据えた **自己紹介・職務経歴書・履歴書の一元管理リポジトリ** です。  
+Markdown（正本）から **GitHub Pages による Web 公開** と **GitHub Actions による提出用 PDF の自動生成 & Google Drive 同期** を実現しています。
+
+---
+
+## 🌐 公開サイト (GitHub Pages)
+
+`docs/` ディレクトリ配下の Markdown ファイルは、GitHub Pages を通じて Web 上に公開されています（個人情報は安全にマスクされています）。
+
+🔗 **Web サイト URL**: **[https://kouki-y-dev.github.io/about-me/](https://kouki-y-dev.github.io/about-me/)**
+
+| ページ | ソースファイル | 内容 |
+| :--- | :--- | :--- |
+| 🏠 **[About Me (Top)](https://kouki-y-dev.github.io/about-me/)** | [`docs/index.md`](file:///home/user/github/about-me/docs/index.md) | 自己紹介、仕事のスタンス・価値観、スキルセット概要、各種リンク |
+| 💼 **[職務経歴書 (Resume)](https://kouki-y-dev.github.io/about-me/resume)** | [`docs/resume.md`](file:///home/user/github/about-me/docs/resume.md) | 職務要約、実務プロジェクト詳細、技術スタック |
+| 📋 **[履歴書・プロフィール (CV)](https://kouki-y-dev.github.io/about-me/cv)** | [`docs/cv.md`](file:///home/user/github/about-me/docs/cv.md) | 基本情報サマリ、学歴、職歴一覧、保有資格 |
 
 ---
 
@@ -9,7 +39,8 @@
 1. **正本の一元管理（Single Source of Truth）**:
    - `docs/` 配下の Markdown ファイルをマスターデータとして管理し、二重管理を防ぎます。
 2. **GitHub Pages での安全な公開（Web）**:
-   - 個人情報（本名・詳細住所・電話番号等）をマスクした状態でポートフォリオ・職務経歴書を Web 公開します。
+   - [https://kouki-y-dev.github.io/about-me/](https://kouki-y-dev.github.io/about-me/) にて Web 公開。
+   - 個人情報（本名・詳細住所・電話番号等）をマスクした状態でポートフォリオ・職務経歴書を Web 上で共有可能です。
 3. **提出用 PDF の自動生成 & Google Drive 同期（CI/CD）**:
    - GitHub Actions 上で GitHub Secrets から個人情報を安全に注入し、A4 最適化された提出用 PDF を自動生成します。
    - Google Drive の指定フォルダ内に **常に最新バージョンの 1 ファイルとして上書き同期** します（Google Drive の共有リンク URL を変えずに更新可能）。
@@ -23,9 +54,9 @@
 ├── .github/
 │   └── workflows/
 │       └── export-pdf.yml        # PDF 生成 & Google Drive 同期ワークフロー
-├── docs/                         # 【公開用マークダウン（正本）】
+├── docs/                         # 【公開用マークダウン（正本 / GitHub Pages 対象）】
 │   ├── index.md                  # ポートフォリオトップ（自己紹介・価値観・目次）
-│   ├── resume.md                 # 職務経歴書テンプレート
+│   ├── resume.md                 # 職務経歴書
 │   └── cv.md                     # 履歴書・プロフィール詳細
 ├── scripts/
 │   ├── generate-pdf.mjs          # Markdown -> Secrets置換 -> A4 PDF 生成スクリプト
@@ -87,8 +118,8 @@ SECRET_NAME="山田 太郎" SECRET_ADDRESS="東京都千代田区1-1-1" npm run 
 
 ### 1. GitHub Pages の有効化
 1. GitHub リポジトリの **Settings** > **Pages** を開きます。
-2. **Build and deployment** > **Source** で **「GitHub Actions」** を選択します。
-3. `main` ブランチにプッシュすると、`.github/workflows/deploy-pages.yml` が自動実行され、公開されます。
+2. **Build and deployment** > **Source** で **「Deploy from a branch」** または **「GitHub Actions」** を選択します（`main` ブランチの `/docs` フォルダ、または GitHub Actions 経由）。
+3. これにより、[https://kouki-y-dev.github.io/about-me/](https://kouki-y-dev.github.io/about-me/) にてドキュメントが自動公開されます。
 
 ### 2. Google Cloud & Google Drive の準備
 1. [Google Cloud Console](https://console.cloud.google.com/) で新規プロジェクトを作成（または既存プロジェクトを選択）。
@@ -115,5 +146,6 @@ GitHub リポジトリの **Settings** > **Secrets and variables** > **Actions**
 - `SECRET_HIGHSCHOOL`: 高校名・学科（例: `〇〇県立△△高等学校 情報処理科`）
 - `SECRET_UNIVERSITY`: 大学名・学部学科（例: `〇〇大学 △△学部 □□学科`）
 - `SECRET_COMPANY`: 会社名（例: `株式会社〇〇`）
+
 
 ---
