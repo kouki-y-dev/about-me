@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+
+# Environment / Credentials
+.env
+*.local
+credentials.json
+service-account.json
+
+# OS files
+.DS_Store
+Thumbs.db

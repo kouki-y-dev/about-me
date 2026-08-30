@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+@page {
+  size: A4 portrait;
+  margin: 15mm 15mm 18mm 15mm;
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "BIZ UDPGothic", Meiryo, sans-serif;
+  font-size: 10pt;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* Headings */
+h1 {
+  font-size: 18pt;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 12pt;
+  padding-bottom: 4pt;
+  border-bottom: 2pt solid #24292f;
+  color: #111;
+  break-after: avoid;
+}
+
+h2 {
+  font-size: 13pt;
+  font-weight: 700;
+  margin-top: 16pt;
+  margin-bottom: 8pt;
+  padding-left: 6pt;
+  border-left: 3.5pt solid #0969da;
+  color: #1f2328;
+  break-after: avoid;
+}
+
+h3 {
+  font-size: 11pt;
+  font-weight: 700;
+  margin-top: 12pt;
+  margin-bottom: 6pt;
+  color: #24292f;
+  break-after: avoid;
+}
+
+h4 {
+  font-size: 10pt;
+  font-weight: 700;
+  margin-top: 8pt;
+  margin-bottom: 4pt;
+  color: #333;
+  break-after: avoid;
+}
+
+/* Paragraphs & Lists */
+p {
+  margin-top: 0;
+  margin-bottom: 6pt;
+}
+
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 8pt;
+  padding-left: 18pt;
+}
+
+li {
+  margin-bottom: 3pt;
+}
+
+li > ul, li > ol {
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+}
+
+/* Horizontal Rule */
+hr {
+  border: 0;
+  border-top: 1px solid #d0d7de;
+  margin: 12pt 0;
+  break-after: avoid;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 6pt;
+  margin-bottom: 10pt;
+  font-size: 9.5pt;
+  break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #d0d7de;
+  padding: 5pt 7pt;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #f6f8fa;
+  font-weight: 600;
+  color: #24292f;
+}
+
+/* Links */
+a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+/* Code */
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 8.5pt;
+  background-color: #f6f8fa;
+  padding: 1pt 3pt;
+  border-radius: 3pt;
+  border: 1px solid #e1e4e8;
+}
+
+/* Strong / Bold */
+strong {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 6pt 0;
+  padding: 4pt 10pt;
+  color: #57606a;
+  border-left: 3pt solid #d0d7de;
+  background-color: #f6f8fa;
+}
+
+/* Page break & Section control */
+.page-break {
+  page-break-before: always;
+  break-before: page;
+}
+
+/* Ensure project sections don't break awkwardly across pages */
+.project-block,
+section,
+.avoid-break {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}

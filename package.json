@@ -1,0 +1,25 @@
+{
+  "name": "about-me",
+  "version": "1.0.0",
+  "description": "Portfolio, Resume, and CV with GitHub Pages and Automated PDF Export",
+  "type": "module",
+  "scripts": {
+    "pdf": "node scripts/generate-pdf.mjs",
+    "upload": "node scripts/upload-drive.mjs",
+    "export": "npm run pdf && npm run upload"
+  },
+  "keywords": [
+    "resume",
+    "cv",
+    "portfolio",
+    "github-pages",
+    "pdf"
+  ],
+  "author": "kouki-y-dev",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "markdown-it": "^14.1.0",
+    "puppeteer": "^24.4.0"
+  }
+}
