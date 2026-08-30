@@ -1,0 +1,57 @@
+name: Export PDF & Sync to Google Drive
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/cv.md'
+      - 'docs/resume.md'
+      - 'scripts/**'
+      - '.github/workflows/export-pdf.yml'
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  export-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Install Chrome for Puppeteer
+        run: npx puppeteer browsers install chrome
+
+      - name: Generate PDFs (with Secrets injected)
+        env:
+          SECRET_NAME: ${{ secrets.SECRET_NAME }}
+          SECRET_KANA: ${{ secrets.SECRET_KANA }}
+          SECRET_BIRTHDATE: ${{ secrets.SECRET_BIRTHDATE }}
+          SECRET_ADDRESS: ${{ secrets.SECRET_ADDRESS }}
+          SECRET_EMAIL: ${{ secrets.SECRET_EMAIL }}
+          SECRET_PHONE: ${{ secrets.SECRET_PHONE }}
+        run: npm run pdf
+
+      - name: Upload to Google Drive (In-place update)
+        env:
+          GDRIVE_SERVICE_ACCOUNT_KEY: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_KEY }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: npm run upload
+
+      - name: Upload PDFs as GitHub Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: resume-pdfs
+          path: |
+            dist/*.pdf
+            dist/*.html
+          retention-days: 14
