@@ -76,9 +76,10 @@ SECRET_NAME="山田 太郎" SECRET_ADDRESS="東京都千代田区1-1-1" npm run 
 ```
 
 生成された PDF および HTML プレビューは `dist/` ディレクトリに出力されます：
-- `dist/resume.pdf`（職務経歴書）
-- `dist/cv.pdf`（履歴書）
-- `dist/resume.html`（ブラウザでレイアウト確認用）
+- **職務経歴書 (提出用・Secrets置換あり)**: `dist/resume.pdf` / `dist/resume.html`
+- **職務経歴書 (公開用・Secrets置換なし)**: `dist/resume-public.pdf` / `dist/resume-public.html`
+- **履歴書 (提出用・Secrets置換あり)**: `dist/cv.pdf` / `dist/cv.html`
+- **履歴書 (公開用・Secrets置換なし)**: `dist/cv-public.pdf` / `dist/cv-public.html`
 
 ---
 

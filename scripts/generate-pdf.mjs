@@ -9,8 +9,20 @@ const rootDir = path.resolve(__dirname, '..');
 
 // 対象ファイル定義 (入力Markdown -> 出力PDF)
 const TARGET_FILES = [
-  { input: 'docs/resume.md', output: 'dist/resume.pdf', title: '職務経歴書' },
-  { input: 'docs/cv.md', output: 'dist/cv.pdf', title: '履歴書' }
+  {
+    input: 'docs/resume.md',
+    variants: [
+      { output: 'dist/resume.pdf', title: '職務経歴書', replaceSecrets: true },
+      { output: 'dist/resume-public.pdf', title: '職務経歴書 (公開版)', replaceSecrets: false }
+    ]
+  },
+  {
+    input: 'docs/cv.md',
+    variants: [
+      { output: 'dist/cv.pdf', title: '履歴書', replaceSecrets: true },
+      { output: 'dist/cv-public.pdf', title: '履歴書 (公開版)', replaceSecrets: false }
+    ]
+  }
 ];
 
 // 環境変数（Secrets）による置換マッピング
@@ -93,8 +105,6 @@ async function main() {
 
   for (const target of TARGET_FILES) {
     const inputPath = path.join(rootDir, target.input);
-    const outputPath = path.join(rootDir, target.output);
-    const htmlPreviewPath = outputPath.replace(/\.pdf$/, '.html');
 
     // ファイル存在チェック
     try {
@@ -104,21 +114,27 @@ async function main() {
       continue;
     }
 
-    console.log(`📄 Processing: ${target.input} -> ${target.output}`);
-
-    // Markdown 読み込み & Secrets 置換
     const rawMarkdown = await fs.readFile(inputPath, 'utf-8');
-    const processedMarkdown = replaceSecrets(rawMarkdown);
 
-    // HTML 変換
-    const bodyHtml = md.render(processedMarkdown);
-    const fullHtml = buildFullHtml(bodyHtml, printCss, target.title);
+    for (const variant of target.variants) {
+      const outputPath = path.join(rootDir, variant.output);
+      const htmlPreviewPath = outputPath.replace(/\.pdf$/, '.html');
 
-    // プレビュー用 HTML を dist に保存
-    await fs.writeFile(htmlPreviewPath, fullHtml, 'utf-8');
-    console.log(`✅ Saved HTML preview: ${htmlPreviewPath}`);
+      console.log(`📄 Processing: ${target.input} -> ${variant.output} (Secrets置換: ${variant.replaceSecrets ? 'あり' : 'なし'})`);
 
-    generatedHtmlFiles.push({ fullHtml, outputPath, title: target.title });
+      // Markdown 読み込み & Secrets 置換 (指定時のみ)
+      const processedMarkdown = variant.replaceSecrets ? replaceSecrets(rawMarkdown) : rawMarkdown;
+
+      // HTML 変換
+      const bodyHtml = md.render(processedMarkdown);
+      const fullHtml = buildFullHtml(bodyHtml, printCss, variant.title);
+
+      // プレビュー用 HTML を dist に保存
+      await fs.writeFile(htmlPreviewPath, fullHtml, 'utf-8');
+      console.log(`✅ Saved HTML preview: ${htmlPreviewPath}`);
+
+      generatedHtmlFiles.push({ fullHtml, outputPath, title: variant.title });
+    }
   }
 
   // Puppeteer による PDF 出力
