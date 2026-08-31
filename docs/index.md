@@ -35,6 +35,7 @@
 - **Cloud & Infrastructure**: AWS, Docker, Terraform, CloudFormation
 - **CI/CD & Tools**: GitHub Actions, Git, Linux
 - **AWS Services**: CloudWatch, IAM, Step Functions, SNS, SQS, SES, Lambda, DynamoDB, Glue, Athena, QuickSuite(旧QuickSight), OpenSearch, Bedrock Agentcore, API Gateway, S3, Secrets Manager, EventBridge, ECR, Route53
+
 ---
 
 ## 📮 連絡先 & リンク
