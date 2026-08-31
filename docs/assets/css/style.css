@@ -1,0 +1,474 @@
+/* ==========================================================================
+   Global Variables & Reset
+   ========================================================================== */
+:root {
+  --primary-color: #0969da;
+  --primary-hover: #0550ae;
+  --primary-subtle: #f0f6ff;
+  --primary-border: #b6e3ff;
+  
+  --bg-page: #f6f8fa;
+  --bg-card: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-muted: #f1f5f9;
+  
+  --text-main: #1f2328;
+  --text-heading: #0f172a;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --border-light: #e2e8f0;
+  --border-subtle: #edf2f7;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--text-main);
+  background-color: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-heading);
+}
+
+.logo-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: var(--primary-subtle);
+  border: 1px solid var(--primary-border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+
+.logo-name {
+  letter-spacing: -0.01em;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  background-color: var(--primary-subtle);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  background-color: var(--primary-subtle);
+  font-weight: 600;
+}
+
+.nav-link.github-link {
+  padding: 0.45rem;
+  color: var(--text-muted);
+}
+
+.nav-link.github-link:hover {
+  color: #111;
+  background-color: var(--bg-muted);
+}
+
+.nav-icon {
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Page Layout & Main Card
+   ========================================================================== */
+.page-wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+.content-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 3rem 3.25rem;
+}
+
+/* ==========================================================================
+   Markdown Typography & Elements
+   ========================================================================== */
+.markdown-body {
+  color: var(--text-main);
+}
+
+/* Headings */
+.markdown-body h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.markdown-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(90deg, rgba(9, 105, 218, 0.08) 0%, rgba(240, 246, 255, 0.2) 60%, transparent 100%);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.markdown-body h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-top: 1.75rem;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.markdown-body h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Paragraphs & Text */
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.markdown-body a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.markdown-body a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Horizontal Rule */
+.markdown-body hr {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent, var(--border-light) 15%, var(--border-light) 85%, transparent);
+  margin: 2.25rem 0;
+}
+
+/* Lists */
+.markdown-body ul, 
+.markdown-body ol {
+  padding-left: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.45rem;
+}
+
+.markdown-body li > ul, 
+.markdown-body li > ol {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Contents 目次セクションの特別装飾 */
+.markdown-body h2:has(+ ul) + ul,
+.markdown-body h2 + ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem 0;
+}
+
+.markdown-body h2:has(+ ul) + ul > li,
+.markdown-body h2 + ul > li {
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: var(--shadow-sm);
+}
+
+.markdown-body h2:has(+ ul) + ul > li:hover,
+.markdown-body h2 + ul > li:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-border);
+  box-shadow: var(--shadow-md);
+  background-color: var(--bg-card);
+}
+
+.markdown-body h2:has(+ ul) + ul > li > a,
+.markdown-body h2 + ul > li > a {
+  font-size: 1.02rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.35rem;
+}
+
+.markdown-body h2:has(+ ul) + ul > li > a::after,
+.markdown-body h2 + ul > li > a::after {
+  content: " →";
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+
+.markdown-body h2:has(+ ul) + ul > li:hover > a::after,
+.markdown-body h2 + ul > li:hover > a::after {
+  transform: translateX(3px);
+}
+
+.markdown-body h2:has(+ ul) + ul > li > ul,
+.markdown-body h2 + ul > li > ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Inline Code & Badges */
+.markdown-body code {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.86em;
+  background-color: var(--bg-muted);
+  color: #24292f;
+  padding: 0.2em 0.45em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.markdown-body pre code {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+/* Tables */
+.markdown-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.25rem 0;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.markdown-body th,
+.markdown-body td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+}
+
+.markdown-body th:last-child,
+.markdown-body td:last-child {
+  border-right: none;
+}
+
+.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-body th {
+  background-color: var(--bg-subtle);
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.markdown-body tr:hover td {
+  background-color: rgba(240, 246, 255, 0.4);
+}
+
+/* Blockquotes */
+.markdown-body blockquote {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--bg-subtle);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--border-light);
+  background-color: var(--bg-card);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 1rem 0.75rem 3rem;
+  }
+  
+  .content-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+  
+  .markdown-body h1 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown-body h2 {
+    font-size: 1.15rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .header-inner {
+    padding: 0.6rem 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .site-nav {
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+  
+  .nav-link {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .markdown-body h2:has(+ ul) + ul,
+  .markdown-body h2 + ul {
+    grid-template-columns: 1fr;
+  }
+}

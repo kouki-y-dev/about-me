@@ -1,0 +1,17 @@
+title: "kouki_y | Portfolio & Resume"
+description: "データエンジニア兼バックエンドエンジニア kouki_y のポートフォリオ・職務経歴書・履歴書です。"
+baseurl: "/about-me"
+url: "https://kouki-y-dev.github.io"
+
+# Markdown設定
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# すべてのMarkdownファイルにデフォルトレイアウトを適用
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
