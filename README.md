@@ -78,7 +78,6 @@ Markdown（`docs/resume.md` や `docs/cv.md`）内に以下の HTML タグを記
 | :--- | :--- | :--- |
 | `<span class="secret-name">...</span>` | ニックネーム | `SECRET_NAME`（本名） |
 | `<span class="secret-kana">...</span>` | ニックネームのフリガナ | `SECRET_KANA`（本名フリガナ） |
-| `<span class="secret-birthdate">...</span>` | 199X年X月X日 | `SECRET_BIRTHDATE`（生年月日） |
 | `<span class="secret-address">...</span>` | 都道府県のみ（例: 東京都） | `SECRET_ADDRESS`（番地・建物名を含む現住所） |
 | `<span class="secret-email">...</span>` | 公開用メールアドレス | `SECRET_EMAIL`（提出用メールアドレス） |
 | `<span class="secret-phone">...</span>` | 非公開 | `SECRET_PHONE`（電話番号） |
@@ -139,7 +138,6 @@ GitHub リポジトリの **Settings** > **Secrets and variables** > **Actions**
 #### 提出用個人情報
 - `SECRET_NAME`: 本名（例: `山田 太郎`）
 - `SECRET_KANA`: フリガナ（例: `ヤマダ タロウ`）
-- `SECRET_BIRTHDATE`: 生年月日（例: `1995年5月15日`）
 - `SECRET_ADDRESS`: 正式な住所（例: `東京都千代田区〇〇 1-2-3 マンション名101`）
 - `SECRET_EMAIL`: 提出用連絡先メールアドレス
 - `SECRET_PHONE`: 提出用電話番号（例: `090-1234-5678`）
