@@ -15,6 +15,11 @@ const UPLOAD_FILES = [
   { localPath: 'dist/cv-public.pdf', driveFileName: '履歴書_公開版.pdf' }
 ];
 
+// Google Drive API クエリパラメータのエスケープ関数
+function escapeDriveQuery(value) {
+  return String(value).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
 async function getGoogleDriveClient() {
   const serviceAccountKeyRaw = process.env.GDRIVE_SERVICE_ACCOUNT_KEY;
   if (!serviceAccountKeyRaw) {
@@ -31,14 +36,15 @@ async function getGoogleDriveClient() {
       const keyContent = fs.readFileSync(path.resolve(rootDir, serviceAccountKeyRaw), 'utf-8');
       credentials = JSON.parse(keyContent);
     }
-  } catch (err) {
-    console.error('❌ Failed to parse GDRIVE_SERVICE_ACCOUNT_KEY JSON:', err.message);
+  } catch {
+    // シークレットの生文字列がエラーログに含まれるのを防ぐため、固定メッセージのみ出力
+    console.error('❌ Failed to parse GDRIVE_SERVICE_ACCOUNT_KEY (Invalid JSON format or unreadable file).');
     return null;
   }
 
   const auth = new google.auth.GoogleAuth({
     credentials,
-    scopes: ['https://www.googleapis.com/auth/drive']
+    scopes: ['https://www.googleapis.com/auth/drive.file']
   });
 
   return google.drive({ version: 'v3', auth });
@@ -52,8 +58,10 @@ async function uploadOrUpdateFile(drive, folderId, localFilePath, driveFileName)
 
   console.log(`🔍 Checking existing file in Google Drive: "${driveFileName}"...`);
 
-  // 対象フォルダ内に同名ファイルがあるか検索
-  const query = `name = '${driveFileName}' and '${folderId}' in parents and trashed = false`;
+  // 対象フォルダ内に同名ファイルがあるか検索（エスケープ適用）
+  const escapedName = escapeDriveQuery(driveFileName);
+  const escapedFolderId = escapeDriveQuery(folderId);
+  const query = `name = '${escapedName}' and '${escapedFolderId}' in parents and trashed = false`;
   const res = await drive.files.list({
     q: query,
     fields: 'files(id, name, webViewLink)',
