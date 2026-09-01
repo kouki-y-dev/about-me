@@ -38,7 +38,7 @@ async function getGoogleDriveClient() {
 
   const auth = new google.auth.GoogleAuth({
     credentials,
-    scopes: ['https://www.googleapis.com/auth/drive.file']
+    scopes: ['https://www.googleapis.com/auth/drive']
   });
 
   return google.drive({ version: 'v3', auth });
@@ -57,7 +57,9 @@ async function uploadOrUpdateFile(drive, folderId, localFilePath, driveFileName)
   const res = await drive.files.list({
     q: query,
     fields: 'files(id, name, webViewLink)',
-    spaces: 'drive'
+    spaces: 'drive',
+    supportsAllDrives: true,
+    includeItemsFromAllDrives: true
   });
 
   const existingFile = res.data.files && res.data.files.length > 0 ? res.data.files[0] : null;
@@ -71,7 +73,8 @@ async function uploadOrUpdateFile(drive, folderId, localFilePath, driveFileName)
     const updateRes = await drive.files.update({
       fileId: existingFile.id,
       media,
-      fields: 'id, name, webViewLink'
+      fields: 'id, name, webViewLink',
+      supportsAllDrives: true
     });
     console.log(`✅ Successfully updated: "${driveFileName}" (ID: ${updateRes.data.id})`);
     if (updateRes.data.webViewLink) {
@@ -85,7 +88,8 @@ async function uploadOrUpdateFile(drive, folderId, localFilePath, driveFileName)
         parents: [folderId]
       },
       media,
-      fields: 'id, name, webViewLink'
+      fields: 'id, name, webViewLink',
+      supportsAllDrives: true
     });
     console.log(`✅ Successfully created: "${driveFileName}" (ID: ${createRes.data.id})`);
     if (createRes.data.webViewLink) {
