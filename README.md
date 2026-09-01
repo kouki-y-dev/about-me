@@ -16,11 +16,11 @@
 </div>
 
 転職活動を見据えた **自己紹介・職務経歴書・履歴書の一元管理リポジトリ** です。  
-Markdown（正本）から **GitHub Pages による Web 公開** と **GitHub Actions による提出用 PDF の自動生成 & Google Drive 同期** を実現しています。
+Markdownから **GitHub Pages による Web 公開** と **GitHub Actions による提出用 PDF の自動生成 & Google Drive 同期** を実現しています。
 
 ---
 
-## 🌐 公開サイト (GitHub Pages)
+## 🌐 公開サイト - GitHub Pages
 
 `docs/` ディレクトリ配下の Markdown ファイルは、GitHub Pages を通じて Web 上に公開されています（個人情報は安全にマスクされています）。
 
@@ -36,12 +36,12 @@ Markdown（正本）から **GitHub Pages による Web 公開** と **GitHub Ac
 
 ## 🌟 特徴・設計思想
 
-1. **正本の一元管理（Single Source of Truth）**:
+1. **正本の一元管理**:
    - `docs/` 配下の Markdown ファイルをマスターデータとして管理し、二重管理を防ぎます。
-2. **GitHub Pages での安全な公開（Web）**:
+2. **GitHub Pages での安全な公開**:
    - [https://kouki-y-dev.github.io/about-me/](https://kouki-y-dev.github.io/about-me/) にて Web 公開。
    - 個人情報（本名・詳細住所・電話番号等）をマスクした状態でポートフォリオ・職務経歴書を Web 上で共有可能です。
-3. **提出用 PDF の自動生成 & Google Drive 同期（CI/CD）**:
+3. **提出用 PDF の自動生成 & Google Drive 同期**:
    - GitHub Actions 上で GitHub Secrets から個人情報を安全に注入し、A4 最適化された提出用 PDF を自動生成します。
    - Google Drive の指定フォルダ内に **常に最新バージョンの 1 ファイルとして上書き同期** します（Google Drive の共有リンク URL を変えずに更新可能）。
 
@@ -113,14 +113,9 @@ SECRET_NAME="山田 太郎" SECRET_ADDRESS="東京都千代田区1-1-1" npm run 
 
 ---
 
-## ⚙️ 初期セットアップガイド (GitHub Actions & Google Drive)
+## ⚙️ 初期セットアップガイド
 
-### 1. GitHub Pages の有効化
-1. GitHub リポジトリの **Settings** > **Pages** を開きます。
-2. **Build and deployment** > **Source** で **「Deploy from a branch」** または **「GitHub Actions」** を選択します（`main` ブランチの `/docs` フォルダ、または GitHub Actions 経由）。
-3. これにより、[https://kouki-y-dev.github.io/about-me/](https://kouki-y-dev.github.io/about-me/) にてドキュメントが自動公開されます。
-
-### 2. Google Cloud & Google Drive の準備
+### 1. Google Cloud & Google Drive の準備
 1. [Google Cloud Console](https://console.cloud.google.com/) で新規プロジェクトを作成（または既存プロジェクトを選択）。
 2. **「Google Drive API」** を有効化します。
 3. **「IAM と管理」>「サービス アカウント」** でサービスアカウントを作成し、**JSON キー** を発行・ダウンロードします。
@@ -128,7 +123,7 @@ SECRET_NAME="山田 太郎" SECRET_ADDRESS="東京都千代田区1-1-1" npm run 
 5. 作成したフォルダの **「共有」** 設定を開き、手順 3 の **サービスアカウントのメールアドレス（`xxx@xxx.iam.gserviceaccount.com`）を「編集者」として追加** します。
 6. フォルダの URL から **フォルダ ID** を取得します（例: `https://drive.google.com/drive/folders/<FOLDER_ID>` の `<FOLDER_ID>` 部分）。
 
-### 3. GitHub Secrets の登録
+### 2. GitHub Secrets の登録
 GitHub リポジトリの **Settings** > **Secrets and variables** > **Actions** にて、以下の Repository secrets を登録します。
 
 #### Google Drive 連携用
