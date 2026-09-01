@@ -145,5 +145,4 @@ GitHub リポジトリの **Settings** > **Secrets and variables** > **Actions**
 - `SECRET_UNIVERSITY`: 大学名・学部学科（例: `〇〇大学 △△学部 □□学科`）
 - `SECRET_COMPANY`: 会社名（例: `株式会社〇〇`）
 
-
 ---
