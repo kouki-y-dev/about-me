@@ -30,11 +30,14 @@
 
 ## 🛠 スキルセット概要
 
-- **Languages**: Python , SQL
-- **Frameworks & Libraries**: FastAPI, Pydantic
-- **Cloud & Infrastructure**: AWS, Docker, Terraform, CloudFormation
-- **CI/CD & Tools**: GitHub Actions, Git, Linux
-- **AWS Services**: CloudWatch, IAM, Step Functions, SNS, SQS, SES, Lambda, DynamoDB, Glue, Athena, QuickSuite(旧QuickSight), OpenSearch, Bedrock Agentcore, API Gateway, S3, Secrets Manager, EventBridge, ECR, Route53
+- **Languages**: `Python`, `SQL`
+- **Frameworks & Libraries**: `FastAPI`, `Pydantic`
+- **Cloud & Infrastructure**: `AWS`, `Docker`, `Terraform`, `CloudFormation`
+- **CI/CD & Tools**: `GitHub Actions`, `Git`, `Linux`
+- **AWS (Data & Analytics)**: `Glue`, `Athena`, `QuickSuite(旧QuickSight)`, `OpenSearch`
+- **AWS (Serverless & Backend)**: `Lambda`, `Step Functions`, `API Gateway`, `DynamoDB`, `EventBridge`
+- **AWS (Storage & Ops/Security)**: `S3`, `IAM`, `CloudWatch`, `Secrets Manager`, `SNS`, `SQS`, `SES`, `ECR`, `Route53`
+- **AWS (Generative AI)**: `Bedrock Agentcore`
 
 ---
 
