@@ -32,7 +32,6 @@ function replaceSecrets(markdownContent) {
   const secretMappings = {
     'secret-name': process.env.SECRET_NAME,
     'secret-kana': process.env.SECRET_KANA,
-    'secret-birthdate': process.env.SECRET_BIRTHDATE,
     'secret-address': process.env.SECRET_ADDRESS,
     'secret-email': process.env.SECRET_EMAIL,
     'secret-phone': process.env.SECRET_PHONE,
