@@ -69,32 +69,26 @@ async function uploadOrUpdateFile(drive, folderId, localFilePath, driveFileName)
   };
 
   if (existingFile) {
-    console.log(`🔄 Existing file found (ID: ${existingFile.id}). Updating content in-place...`);
-    const updateRes = await drive.files.update({
+    console.log(`🔄 Existing file found. Updating content in-place...`);
+    await drive.files.update({
       fileId: existingFile.id,
       media,
-      fields: 'id, name, webViewLink',
+      fields: 'id, name',
       supportsAllDrives: true
     });
-    console.log(`✅ Successfully updated: "${driveFileName}" (ID: ${updateRes.data.id})`);
-    if (updateRes.data.webViewLink) {
-      console.log(`🔗 Link: ${updateRes.data.webViewLink}`);
-    }
+    console.log(`✅ Successfully updated: "${driveFileName}"`);
   } else {
     console.log(`✨ Creating new file in Google Drive folder: "${driveFileName}"...`);
-    const createRes = await drive.files.create({
+    await drive.files.create({
       requestBody: {
         name: driveFileName,
         parents: [folderId]
       },
       media,
-      fields: 'id, name, webViewLink',
+      fields: 'id, name',
       supportsAllDrives: true
     });
-    console.log(`✅ Successfully created: "${driveFileName}" (ID: ${createRes.data.id})`);
-    if (createRes.data.webViewLink) {
-      console.log(`🔗 Link: ${createRes.data.webViewLink}`);
-    }
+    console.log(`✅ Successfully created: "${driveFileName}"`);
   }
 }
 
@@ -110,7 +104,7 @@ async function main() {
     return;
   }
 
-  console.log(`📁 Uploading to Google Drive folder ID: ${folderId}`);
+  console.log(`📁 Uploading files to Google Drive...`);
 
   for (const item of UPLOAD_FILES) {
     const localFilePath = path.join(rootDir, item.localPath);
