@@ -41,4 +41,4 @@
 | 2014年11月 | 基本情報技術者試験（FE）合格 |
 | 2015年01月 | 全商情報処理検定 プログラミング部門 1級 |
 | 2017年11月 | 普通自動車第一種運転免許（AT限定）|
-| 2022年3月  | AWS Certified Cloud Practitioner (現在失効) |
+| 2022年03月 | AWS Certified Cloud Practitioner (現在失効) |
