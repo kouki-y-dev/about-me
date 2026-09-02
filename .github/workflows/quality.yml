@@ -1,0 +1,33 @@
+name: Docs Quality Check
+
+on:
+  push:
+    paths:
+      - 'docs/**/*.md'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.textlintrc.json'
+      - '.github/workflows/quality.yml'
+  pull_request:
+    paths:
+      - 'docs/**/*.md'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.textlintrc.json'
+      - '.github/workflows/quality.yml'
+jobs:
+  check-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate Markdown files
+        run: npm run lint

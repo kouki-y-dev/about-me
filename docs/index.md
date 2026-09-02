@@ -18,13 +18,13 @@
 
 ### 自己紹介
 
-札幌でデータエンジニア兼バックエンドエンジニアをしています。データ基盤構築の保守・管理やそこからのデータ分析、API開発等を担当していました。主にPythonとAWSを使用しています。
+札幌でデータエンジニア兼バックエンドエンジニアをしています。データ基盤の構築・保守運用やデータ分析、API開発等を担当してきました。主にPythonとAWSを使用しています。
 
 ### 大切にしていること・仕事のスタンス
 
 1. **課題解決ファースト**: 技術の導入自体を目的にせず、ビジネス課題や運用負荷を考慮して最も効果的なアプローチを選択します。
-2. **AIファースト**: 設計・開発問わず常にAIを使う事を念頭に置いています。ただAIの答えを鵜呑みにするのではなく、自分自身の頭で考えて検証し、最終的に利用するかどうかを判断します。
-3. **最小手順での開発**: 開発をする際、頭の中に明確な正解が見えるまで手を動かさないように心がけています。最初にできる限り正解を考えてから作り始める事で、手戻りを最小限にするようにしています。
+2. **AIファースト**: 設計・開発問わず常にAIを使うことを念頭に置いています。ただAIの答えを鵜呑みにするのではなく、自分自身の頭で考えて検証し、最終的に利用するかどうかを判断します。
+3. **最小手順での開発**: 開発をする際、頭の中に明確な正解が見えるまで手を動かさないように心がけています。最初にできる限り正解を考えてから作り始めることで、手戻りを最小限に抑えるようにしています。
 
 ---
 
@@ -34,10 +34,10 @@
 - **Frameworks & Libraries**: `FastAPI`, `Pydantic`
 - **Cloud & Infrastructure**: `AWS`, `Docker`, `Terraform`, `CloudFormation`
 - **CI/CD & Tools**: `GitHub Actions`, `Git`, `Linux`
-- **AWS (Data & Analytics)**: `Glue`, `Athena`, `QuickSuite(旧QuickSight)`, `OpenSearch`
+- **AWS (Data & Analytics)**: `Glue`, `Athena`, `QuickSight`, `OpenSearch`
 - **AWS (Serverless & Backend)**: `Lambda`, `Step Functions`, `API Gateway`, `DynamoDB`, `EventBridge`
 - **AWS (Storage & Ops/Security)**: `S3`, `IAM`, `CloudWatch`, `Secrets Manager`, `SNS`, `SQS`, `SES`, `ECR`, `Route53`
-- **AWS (Generative AI)**: `Bedrock Agentcore`
+- **AWS (Generative AI)**: `Bedrock AgentCore`
 
 ---
 
