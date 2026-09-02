@@ -7,13 +7,14 @@ on:
       - 'package.json'
       - 'package-lock.json'
       - '.textlintrc.json'
+      - '.github/workflows/quality.yml'
   pull_request:
     paths:
       - 'docs/**/*.md'
       - 'package.json'
       - 'package-lock.json'
       - '.textlintrc.json'
-
+      - '.github/workflows/quality.yml'
 jobs:
   check-qiita:
     runs-on: ubuntu-latest
