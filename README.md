@@ -131,9 +131,8 @@ npm run lint
 npm run lint:fix
 ```
 > [!NOTE]
-> **Git コミット時および CI での自動品質チェック**
-> - **ローカル (pre-commit)**: `husky` と `lint-staged` が設定されているため、`git commit` 実行時に変更（ステージング）された `docs/**/*.md` に対して自動で `textlint --fix` が実行されます。
-> - **CI (GitHub Actions)**: `Docs Quality Check` ワークフローにより、Pull Request 作成時やブランチ Push 時に CI 上でも textlint による検証が自動実行されます。
+> **Git コミット時の自動チェック（pre-commit）**
+> `husky` と `lint-staged` が設定されているため、`git commit` 実行時に変更（ステージング）された `docs/**/*.md` に対して自動で `textlint --fix` が実行されます。
 
 
 ### 3. PDF 生成（ローカル実行）
