@@ -9,6 +9,7 @@
 
 [![Node.js](https://img.shields.io/badge/Node.js-22.x-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![textlint](https://img.shields.io/badge/textlint-checked-blue?style=flat-square&logo=textlint&logoColor=white)](https://textlint.github.io/)
+[![Agent Skill](https://img.shields.io/badge/Agent%20Skill-proofread--docs-8A2BE2?style=flat-square&logo=robotframework&logoColor=white)](.agents/skills/proofread-docs/SKILL.md)
 [![Puppeteer](https://img.shields.io/badge/Puppeteer-v24-00D8A2?style=flat-square&logo=puppeteer&logoColor=white)](https://pptr.dev/)
 [![Google Drive API](https://img.shields.io/badge/Google%20Drive-API%20v3-4285F4?style=flat-square&logo=googledrive&logoColor=white)](https://developers.google.com/drive)
 [![Markdown](https://img.shields.io/badge/Markdown-Single%20Source-000000?style=flat-square&logo=markdown&logoColor=white)](https://www.markdownguide.org/)
@@ -47,6 +48,8 @@ Markdownから **GitHub Pages による Web 公開** と **GitHub Actions によ
    - Google Drive の指定フォルダ内に **常に最新バージョンの 1 ファイルとして上書き同期** します（Google Drive の共有リンク URL を変えずに更新可能）。
 4. **textlint による文章品質担保**:
    - 履歴書・職務経歴書特有の文脈に最適化したルールセットで、誤字脱字・ら抜き言葉・濁点分離などを自動チェックします。
+5. **AI エージェントスキルによる安全な校閲**:
+   - 専用の Agent Skill (`proofread-docs`) により、AI アシスタントが主張や事実関係を崩さずに高品質な文章校正・推敲を行います。
 
 ---
 
@@ -54,6 +57,10 @@ Markdownから **GitHub Pages による Web 公開** と **GitHub Actions によ
 
 ```text
 .
+├── .agents/                      # AI エージェント用設定
+│   └── skills/
+│       └── proofread-docs/       # マークダウン校閲スキル
+│           └── SKILL.md
 ├── .github/
 │   └── workflows/
 │       └── export-pdf.yml        # PDF 生成 & Google Drive 同期ワークフロー
@@ -150,6 +157,26 @@ SECRET_NAME="山田 太郎" SECRET_ADDRESS="東京都千代田区1-1-1" npm run 
 | `no-double-negative-ja` | `true` (有効) | 二重否定（「〜ではないとは言えない」等）を防止し、明瞭な表現を維持。 |
 | `no-hankaku-kana` | `true` (有効) | 半角カナの混入を防止。 |
 | `no-nfd` | `true` (有効) | macOS 等で発生する濁点・半濁点の分離（`が`）を自動検知・修正。 |
+
+---
+
+## 🤖 AI エージェントスキル (Agent Skill)
+
+本リポジトリには、AI コーディングエージェント向けに最適化された **Agent Skill** を同梱しています。
+
+### `proofread-docs` ([`.agents/skills/proofread-docs/SKILL.md`](.agents/skills/proofread-docs/SKILL.md))
+`docs/` 配下のマークダウン文書（職務経歴書、履歴書、ポートフォリオ）を高品質に校閲・推敲するためのスキルです。
+
+- **事実・主張の完全保護（絶対制約）**:
+  - 著者の実績、スキルレベル、数値、価値観やスタンスなどの事実関係は**一切改変しない**ことを前提とします。
+- **メタデータ・HTML タグの保護**:
+  - 個人情報マスキングタグ（`<span class="secret-...">`）や Markdown テーブル構造を壊さずに校閲します。
+- **textlint と連携した 5 ステップ校閲ワークフロー**:
+  1. `npm run lint:fix` による機械的エラーの一括自動修正
+  2. 文脈に沿った文章全体の精読（誤字脱字、重複表現、不自然な言い回しの改善）
+  3. 修正の適用
+  4. `npm run lint` による最終品質チェック（エラー 0 件の検証）
+  5. 修正箇所（Before / After）と変更理由の報告
 
 ---
 
