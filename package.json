@@ -4,6 +4,8 @@
   "description": "Portfolio, Resume, and CV with GitHub Pages and Automated PDF Export",
   "type": "module",
   "scripts": {
+    "lint": "textlint \"docs/**/*.md\"",
+    "lint:fix": "textlint --fix \"docs/**/*.md\"",
     "pdf": "node scripts/generate-pdf.mjs",
     "upload": "node scripts/upload-drive.mjs",
     "export": "npm run pdf && npm run upload"
@@ -20,6 +22,10 @@
   "dependencies": {
     "googleapis": "^144.0.0",
     "markdown-it": "^14.1.0",
-    "puppeteer": "^24.4.0"
+    "puppeteer": "^24.4.0",
+    "textlint": "^15.8.0"
+  },
+  "devDependencies": {
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2"
   }
 }

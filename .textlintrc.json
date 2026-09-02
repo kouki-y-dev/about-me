@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "preset-ja-technical-writing": {
+      "no-mix-dearu-desumasu": false,
+      "no-doubled-joshi": false,
+      "max-kanji-continuous-len": false,
+      "ja-no-weak-phrase": false,
+      "no-exclamation-question-mark": false,
+      "ja-no-redundant-expression": false,
+      "max-comma": false,
+      "max-ten": {
+        "max": 5
+      },
+      "sentence-length": {
+        "max": 180
+      },
+      "no-dropping-the-ra": true,
+      "no-doubled-conjunctive-particle-ga": true,
+      "no-double-negative-ja": true,
+      "no-hankaku-kana": true,
+      "no-nfd": true
+    }
+  }
+}
