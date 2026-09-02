@@ -3,7 +3,8 @@
 <div align="center">
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white)](https://kouki-y-dev.github.io/about-me/)
-[![CI/CD](https://img.shields.io/badge/GitHub%20Actions-Automated%20Workflow-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/kouki-y-dev/about-me/actions)
+[![CI - Docs Quality Check](https://img.shields.io/github/actions/workflow/status/kouki-y-dev/about-me/quality.yml?label=Docs%20Quality&style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/kouki-y-dev/about-me/actions/workflows/quality.yml)
+[![CI/CD - PDF Export & Sync](https://img.shields.io/github/actions/workflow/status/kouki-y-dev/about-me/export-pdf.yml?label=PDF%20Export%20%26%20Sync&style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/kouki-y-dev/about-me/actions/workflows/export-pdf.yml)
 
 <br />
 
