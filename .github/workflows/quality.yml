@@ -16,7 +16,7 @@ on:
       - '.textlintrc.json'
       - '.github/workflows/quality.yml'
 jobs:
-  check-qiita:
+  check-docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
