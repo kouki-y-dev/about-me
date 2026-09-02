@@ -48,8 +48,9 @@ Markdownから **GitHub Pages による Web 公開** と **GitHub Actions によ
 3. **提出用 PDF の自動生成 & Google Drive 同期**:
    - GitHub Actions 上で GitHub Secrets から個人情報を安全に注入し、A4 最適化された提出用 PDF を自動生成します。
    - Google Drive の指定フォルダ内に **常に最新バージョンの 1 ファイルとして上書き同期** します（Google Drive の共有リンク URL を変えずに更新可能）。
-4. **textlint による文章品質担保**:
+4. **textlint & CI による文章品質担保**:
    - 履歴書・職務経歴書特有の文脈に最適化したルールセットで、誤字脱字・ら抜き言葉・濁点分離などを自動チェックします。
+   - Git コミット時（pre-commit）および GitHub Actions（CI）での自動検証により、常に品質を維持します。
 5. **AI エージェントスキルによる安全な校閲**:
    - 専用の Agent Skill (`proofread-docs`) により、AI アシスタントが主張や事実関係を崩さずに高品質な文章校正・推敲を行います。
 
@@ -65,7 +66,8 @@ Markdownから **GitHub Pages による Web 公開** と **GitHub Actions によ
 │           └── SKILL.md
 ├── .github/
 │   └── workflows/
-│       └── export-pdf.yml        # PDF 生成 & Google Drive 同期ワークフロー
+│       ├── export-pdf.yml        # PDF 生成 & Google Drive 同期ワークフロー
+│       └── quality.yml           # ドキュメント品質チェック（CI）ワークフロー
 ├── docs/                         # 【公開用マークダウン（正本 / GitHub Pages 対象）】
 │   ├── index.md                  # ポートフォリオトップ（自己紹介・価値観・目次）
 │   ├── resume.md                 # 職務経歴書
@@ -80,6 +82,17 @@ Markdownから **GitHub Pages による Web 公開** と **GitHub Actions によ
 ├── package.json
 └── README.md
 ```
+
+---
+
+## 🔄 CI/CD ワークフロー (GitHub Actions)
+
+本リポジトリでは、ドキュメントの品質担保と自動配信のために 2 つの GitHub Actions ワークフローを運用しています。
+
+| ワークフロー | 定義ファイル | トリガー条件 | 主な処理内容 |
+| :--- | :--- | :--- | :--- |
+| 📋 **Docs Quality Check** | [`.github/workflows/quality.yml`](.github/workflows/quality.yml) | `docs/**/*.md` や設定ファイルの変更時（Push / PR） | Node.js 22 環境で `textlint` を実行し、Markdown の文法・表記揺れ・誤字脱字を CI 上で自動検証 |
+| 🚀 **Export PDF & Sync** | [`.github/workflows/export-pdf.yml`](.github/workflows/export-pdf.yml) | `main` ブランチへの Push（`docs/`、`scripts/` 等）/ 手動実行 (`workflow_dispatch`) | GitHub Secrets から個人情報を注入した A4 提出用 PDF を自動生成し、Google Drive へ最新版として上書き同期 |
 
 ---
 
@@ -118,8 +131,9 @@ npm run lint
 npm run lint:fix
 ```
 > [!NOTE]
-> **Git コミット時の自動チェック（pre-commit）**
-> `husky` と `lint-staged` が設定されているため、`git commit` 実行時に変更（ステージング）された `docs/**/*.md` に対して自動で `textlint --fix` が実行されます。
+> **Git コミット時および CI での自動品質チェック**
+> - **ローカル (pre-commit)**: `husky` と `lint-staged` が設定されているため、`git commit` 実行時に変更（ステージング）された `docs/**/*.md` に対して自動で `textlint --fix` が実行されます。
+> - **CI (GitHub Actions)**: `Docs Quality Check` ワークフローにより、Pull Request 作成時やブランチ Push 時に CI 上でも textlint による検証が自動実行されます。
 
 
 ### 3. PDF 生成（ローカル実行）
