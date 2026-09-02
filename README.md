@@ -9,6 +9,7 @@
 
 [![Node.js](https://img.shields.io/badge/Node.js-22.x-339933?style=flat-square&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![textlint](https://img.shields.io/badge/textlint-checked-blue?style=flat-square&logo=textlint&logoColor=white)](https://textlint.github.io/)
+[![Husky](https://img.shields.io/badge/Husky-pre--commit-8B5CF6?style=flat-square&logo=husky&logoColor=white)](https://typicode.github.io/husky/)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-proofread--docs-8A2BE2?style=flat-square&logo=robotframework&logoColor=white)](.agents/skills/proofread-docs/SKILL.md)
 [![Puppeteer](https://img.shields.io/badge/Puppeteer-v24-00D8A2?style=flat-square&logo=puppeteer&logoColor=white)](https://pptr.dev/)
 [![Google Drive API](https://img.shields.io/badge/Google%20Drive-API%20v3-4285F4?style=flat-square&logo=googledrive&logoColor=white)](https://developers.google.com/drive)
@@ -115,6 +116,10 @@ npm run lint
 # 自動修正可能なエラーを一括修正
 npm run lint:fix
 ```
+> [!NOTE]
+> **Git コミット時の自動チェック（pre-commit）**
+> `husky` と `lint-staged` が設定されているため、`git commit` 実行時に変更（ステージング）された `docs/**/*.md` に対して自動で `textlint --fix` が実行されます。
+
 
 ### 3. PDF 生成（ローカル実行）
 ```bash

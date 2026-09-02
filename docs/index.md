@@ -37,7 +37,7 @@
 - **AWS (Data & Analytics)**: `Glue`, `Athena`, `QuickSight`, `OpenSearch`
 - **AWS (Serverless & Backend)**: `Lambda`, `Step Functions`, `API Gateway`, `DynamoDB`, `EventBridge`
 - **AWS (Storage & Ops/Security)**: `S3`, `IAM`, `CloudWatch`, `Secrets Manager`, `SNS`, `SQS`, `SES`, `ECR`, `Route53`
-- **AWS (Generative AI)**: `Bedrock Agents`
+- **AWS (Generative AI)**: `Bedrock AgentCore`
 
 ---
 

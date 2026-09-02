@@ -8,7 +8,8 @@
     "lint:fix": "textlint --fix \"docs/**/*.md\"",
     "pdf": "node scripts/generate-pdf.mjs",
     "upload": "node scripts/upload-drive.mjs",
-    "export": "npm run pdf && npm run upload"
+    "export": "npm run pdf && npm run upload",
+    "prepare": "husky"
   },
   "keywords": [
     "resume",
@@ -26,6 +27,13 @@
     "textlint": "^15.8.0"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "textlint-rule-preset-ja-technical-writing": "^12.0.2"
+  },
+  "lint-staged": {
+    "docs/**/*.md": [
+      "textlint --fix"
+    ]
   }
 }
