@@ -55,7 +55,7 @@
 | Terraform | 2年 | 業務でIaCを組んだ経験があります。直近のAWSリソースはコードで管理していました。 |
 | GitHub Actions | 3年 | 現職ではCI/CDの構築が標準化されており、Terraformと組み合わせてよく使っています。 |
 | GitLab Runners | 2年 | 社内でGitHubを導入する前にGitLabを使用していたため、GitLab CI/CDの利用経験もあります。 |
-| Git  | 6年 | チーム開発におけるバージョン管理ツールとして日常的に使用しています。 |
+| Git  | 6年 | バージョン管理ツールとして日常的に使用しています。 |
 | Linux | 4年 | 普段からLinux環境にSSH接続して開発を行っています。 |
 
 
@@ -184,7 +184,7 @@
 - **期間・体制**: 2025年9月 〜 2025年12月（4ヶ月）
 - **役割**: メンバー（2名チーム）
 - **担当フェーズ**: 技術検証・調査・設計・開発
-- **使用技術**: Python, AWS(API Gateway, SNS, SQS, Lambda, Bedrock Agents), Gemini 2.5 Flash / Pro, Browser Use, Terraform
+- **使用技術**: Python, AWS(API Gateway, SNS, SQS, Lambda, Bedrock AgentCore), Gemini 2.5 Flash / Pro, Browser Use, Terraform
 - **背景・課題**:
   - 不動産会社がシステムに物件情報を登録する際、マイソク（物件概要図）を見ながら手動で入力する手間が大きく、業務負荷の軽減が課題となっていた。
   - 課題解決のため、AIを用いてマイソクからの情報読み取りからシステムへの下書き入力までを全自動化する新規機能の開発が立ち上がった。
