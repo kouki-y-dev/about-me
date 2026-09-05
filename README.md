@@ -1,6 +1,6 @@
-# 📄 About Me for Kouki_Y
-
 <div align="center">
+
+# 📄 About Me for Kouki_Y
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live%20Site-2ea44f?style=for-the-badge&logo=githubpages&logoColor=white)](https://kouki-y-dev.github.io/about-me/)
 [![CI - Docs Quality Check](https://img.shields.io/github/actions/workflow/status/kouki-y-dev/about-me/quality.yml?label=Docs%20Quality&style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/kouki-y-dev/about-me/actions/workflows/quality.yml)
