@@ -35,6 +35,8 @@ Markdownから **GitHub Pages による Web 公開** と **GitHub Actions によ
 | 🏠 **[About Me (Top)](https://kouki-y-dev.github.io/about-me/)** | [`docs/index.md`](file:///home/user/github/about-me/docs/index.md) | 自己紹介、仕事のスタンス・価値観、スキルセット概要、各種リンク |
 | 💼 **[職務経歴書 (Resume)](https://kouki-y-dev.github.io/about-me/resume)** | [`docs/resume.md`](file:///home/user/github/about-me/docs/resume.md) | 職務要約、実務プロジェクト詳細、技術スタック |
 | 📋 **[履歴書・プロフィール (CV)](https://kouki-y-dev.github.io/about-me/cv)** | [`docs/cv.md`](file:///home/user/github/about-me/docs/cv.md) | 基本情報サマリ、学歴、職歴一覧、保有資格 |
+| 💭 **[パーソナルデータ・価値観 (Personal)](https://kouki-y-dev.github.io/about-me/personal)** | [`docs/personal.md`](file:///home/user/github/about-me/docs/personal.md) | 性格、仕事のスタンス・価値観、人となり、中長期のキャリアプラン |
+| 🛠️ **[スキル詳細・習熟度 (Skills)](https://kouki-y-dev.github.io/about-me/skills)** | [`docs/skills.md`](file:///home/user/github/about-me/docs/skills.md) | 各技術スタックの詳細な習熟度、得意領域、対応範囲外・経験が浅い領域 |
 
 ---
 
@@ -71,7 +73,9 @@ Markdownから **GitHub Pages による Web 公開** と **GitHub Actions によ
 ├── docs/                         # 【公開用マークダウン（正本 / GitHub Pages 対象）】
 │   ├── index.md                  # ポートフォリオトップ（自己紹介・価値観・目次）
 │   ├── resume.md                 # 職務経歴書
-│   └── cv.md                     # 履歴書・プロフィール詳細
+│   ├── cv.md                     # 履歴書・プロフィール詳細
+│   ├── personal.md               # パーソナルデータ・価値観（性格・スタンス・キャリア）
+│   └── skills.md                 # スキル詳細・習熟度（得意領域・対応範囲）
 ├── scripts/
 │   ├── generate-pdf.mjs          # Markdown -> Secrets置換 -> A4 PDF 生成スクリプト
 │   ├── upload-drive.mjs          # Google Drive API 最新1ファイル上書きスクリプト
