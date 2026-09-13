@@ -39,10 +39,10 @@ title: "スキル詳細・習熟度"
 
 ### AWS（サーバーレス・バックエンド）
 - **対象サービス**: Lambda, Step Functions, API Gateway, DynamoDB など
-- **主な用途**: イベント駆動型API開発、非同期バッチ処理、システム間データ連携
+- **主な用途**: API開発、定期実行バッチ処理
 - **できること・強み**:
   - Lambda + API Gateway + DynamoDB を用いたサーバーレスバックエンドの設計・構築（テーブル設計・GSI選定からAPI設計まで単独遂行可能）
-  - API Gateway + SNS / SQS + Lambda によるイベント駆動型・非同期処理パイプラインの設計（リトライやDLQによる耐障害性の確保）
+  - API Gateway + SNS / SQS + Lambda によるイベント駆動型・非同期処理パイプラインの設計
   - AWS Lambda Web Adapter を活用した FastAPI によるサーバーレス Web API の構築
 - **経験が浅いこと・対応範囲外**:
   - VPC、サブネット、NAT Gateway、Transit Gateway 等のネットワークインフラ自体のゼロからの設計・構築
@@ -52,7 +52,7 @@ title: "スキル詳細・習熟度"
 
 ### IaC / CI/CD（Terraform / GitHub Actions）
 - **対象ツール**: Terraform, GitHub Actions, GitLab Runners, CloudFormation (SAM)
-- **主な用途**: AWSインフラのコード管理（IaC）、テスト・ビルド・デプロイの自動化
+- **主な用途**: AWSインフラのコード管理、テスト・ビルド・デプロイの自動化
 - **できること・強み**:
   - TerraformによるIaC化から、GitHub Actionsを用いたCI/CDパイプライン構築までを単独で遂行可能
   - pytest, Ruff, ty, mypy および terraform apply による自動テスト・リント環境の構築
