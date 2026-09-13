@@ -36,7 +36,7 @@
 
 - **Languages**: `Python`, `SQL`
 - **Frameworks & Libraries**: `FastAPI`, `Pydantic`
-- **Cloud & Infrastructure**: `AWS`, `Docker`, `Terraform`, `CloudFormation`
+- **Cloud & Infrastructure**: `AWS`, `Docker`, `Terraform`, `CloudFormation (SAM)`
 - **CI/CD & Tools**: `GitHub Actions`, `Git`, `Linux`
 - **AWS (Data & Analytics)**: `Glue`, `Athena`, `QuickSight`, `OpenSearch`
 - **AWS (Serverless & Backend)**: `Lambda`, `Step Functions`, `API Gateway`, `DynamoDB`, `EventBridge`

@@ -51,7 +51,7 @@ title: "スキル詳細・習熟度"
   - DynamoDB のSingle Table Design経験やマルチリージョン跨ぎのグローバルテーブル運用
 
 ### IaC / CI/CD（Terraform / GitHub Actions）
-- **対象ツール**: Terraform, GitHub Actions, GitLab Runners, CloudFormation
+- **対象ツール**: Terraform, GitHub Actions, GitLab Runners, CloudFormation (SAM)
 - **主な用途**: AWSインフラのコード管理（IaC）、テスト・ビルド・デプロイの自動化
 - **できること・強み**:
   - TerraformによるIaC化から、GitHub Actionsを用いたCI/CDパイプライン構築までを単独で遂行可能
@@ -60,7 +60,7 @@ title: "スキル詳細・習熟度"
 - **経験が浅いこと・対応範囲外**:
   - 他者への共有を前提とする Terraform module の設計・構築経験
   - AWS 以外のクラウドベンダーに対する Terraform 利用経験
-  - AWS SAMでの開発経験がメインであり、素のCloudFormationやAWS CDKによる構築は実務未経験
+  - CloudFormation系のツールにおいては AWS SAM での開発経験が中心であり、素のCloudFormationテンプレートやAWS CDKによる構築は実務未経験（直近の実務IaCはTerraformがメイン）
   - Terraform Cloud / Atlantis 等の専用ツールの運用
   - 大規模マルチアカウント環境（AWS Organizations, Control Tower等）での統制レベルのIaC設計
 
@@ -75,6 +75,18 @@ title: "スキル詳細・習熟度"
   - 多数のサービスが連携するマイクロサービスアーキテクチャのサービス分割設計
 - **補足**:
   - 自身のクリーンアーキテクチャに対する考え方について[Zennのテックブログ](https://zenn.dev/yymm/articles/20260905-refactoring-to-clean-architecture)にまとめています
+
+### 生成AI / AIエージェント
+- **対象技術・ツール**: Bedrock AgentCore, Gemini API, Browser Use, Dify
+- **主な用途**: AIエージェント基盤の構築、業務自動化ワークフロー、画像・ドキュメント解析とデータ抽出
+- **できること・強み**:
+  - Bedrock AgentCore を活用したAIエージェントシステムのプロトタイプ検証・初期開発
+  - Pydantic による Structured Outputsを用いた、ハルシネーションを抑制した型安全なデータ抽出
+  - Dify を用いた社内業務効率化ワークフローの構築
+- **経験が浅いこと・対応範囲外**:
+  - LLMモデル自体の事前学習・ファインチューニングや数理モデル設計
+  - LangChain, LlamaIndex 等の特定フレームワークの運用経験
+  - AI エージェントシステムの本番環境での運用保守経験（プロトタイプ・初期開発フェーズが中心）
 
 ---
 
@@ -96,7 +108,7 @@ title: "スキル詳細・習熟度"
 | **SQL** | ・基本的なCRUD<br>・主に分析用途としてのSELECT文記述 | ・スロークエリのチューニング等、クエリの最適化・運用に関する作業 |
 | **FastAPI** | ・Lambda + API Gateway 上での構築（Lambda Web Adapterの利用前提） | ・ECS等を用いたAPIサーバー上での構築経験 |
 | **Pydantic** | ・Lambda + Python 構築時における各種データの型の保証<br>・LLM応答出力時におけるStructured Outputsの利用<br>・クリーンアーキテクチャ適用時におけるドメインモデル構築<br>・AWS CodeArtifactを用いた共通スキーマパッケージの構築・社内配布（validator, computed_field, Annotated を活用） | ・`create_model` を用いた動的なモデル生成（基本はスキーマが確定している設計・運用が中心） |
-| **JavaScript / TypeScript** | ・AWS Lambda（Node.js）の構築<br>・Google Apps Script としての利用<br>・軽微なフロントエンドの改修 | ・React、Vue.js 等のモダンフレームワーク（バックエンド・インフラが中心であり、フロントエンドは専門外） |
+| **JavaScript / TypeScript** | ・AWS Lambda（Node.js / TypeScript）を用いたサーバーレスAPIの構築<br>・Google Apps Script としての利用<br>・軽微なフロントエンドの改修 | ・React、Vue.js 等のモダンフレームワーク（バックエンド・インフラが中心であり、フロントエンドは専門外） |
 | **PHP** | ・新卒入社時の社内システム改修で利用（CodeIgniter） | ・Laravel 等のモダンフレームワークを用いた開発経験 |
 | **Django** | ・個人開発での実装・学習経験 | ・実務経験なし |
 | **Java** | ・学生時代の学習経験 | ・実務経験なし |
