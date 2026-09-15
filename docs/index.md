@@ -45,6 +45,13 @@
 
 ---
 
+## 📝 主な執筆記事・技術発信
+
+- [AIエージェントの評価方法（AgentOps）を設計する時に調べた事と得られた知見](https://zenn.dev/yymm/articles/20260915-agent-ops)
+- [段階的リファクタリングで理解するクリーンアーキテクチャ ～過剰設計の罠まで～](https://zenn.dev/yymm/articles/20260905-refactoring-to-clean-architecture)
+
+---
+
 ## 📮 連絡先 & リンク
 
 - **GitHub**: [github.com/kouki-y-dev](https://github.com/kouki-y-dev)
