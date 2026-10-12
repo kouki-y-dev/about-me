@@ -57,3 +57,4 @@
 - **GitHub**: [github.com/kouki-y-dev](https://github.com/kouki-y-dev)
 - **Zenn**: [zenn.dev/yymm](https://zenn.dev/yymm)
 - **Qiita**: [qiita.com/kouki_y](https://qiita.com/kouki_y)
+- **X**: [x.com/kouki_y_dev](https://x.com/kouki_y_dev)
